@@ -1,9 +1,7 @@
 const rockPaperScissors = ["rock", "paper", "scissors"];
-const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-const computerSelection = getComputerChoice();
+
 let playerScore = 0;
 let computerScore = 0;
-const playGame = playRound(playerSelection, computerSelection);
 
 
 function getComputerChoice() {
@@ -11,7 +9,10 @@ function getComputerChoice() {
 }
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection)
+{
+ playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+ computerSelection = getComputerChoice();
  if (playerSelection === computerSelection) {
     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
     computerScore++;
@@ -38,8 +39,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
    for (let i = 0; i < 5; i++) {
-      playGame; 
-      console.log(playRound(playerSelection, computerSelection))
+      console.log(playRound());
 }
 } 
 
