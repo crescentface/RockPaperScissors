@@ -3,6 +3,7 @@ const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
 const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
+const playGame = playRound(playerSelection, computerSelection);
 
 
 function getComputerChoice() {
@@ -19,26 +20,27 @@ function playRound(playerSelection, computerSelection) {
  } else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Paper beats rock!";
+    return "You lose! Paper beat rock!";
  } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Scissors beats rock!";
+    return "You lose! Scissors beat rock!";
  } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Scissors beats paper!";
+    return "You lose! Scissors beat paper!";
  } else {
     playerScore++;
     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
     return "You win! " + playerSelection + " beats " + computerSelection + "!";
-}
+} 
 }
 
 function game() {
-    while (playerScore <=5 || computerScore <=5) {
-        playRound(playerSelection, computerSelection);
-      }
+   for (let i = 0; i < 5; i++) {
+      playGame; 
+      console.log(playRound(playerSelection, computerSelection))
 }
+} 
 
-console.log(playRound(playerSelection, computerSelection));
+game();
