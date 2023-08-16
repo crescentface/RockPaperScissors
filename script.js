@@ -5,8 +5,22 @@ let computerScore = 0;
 
 
 function getComputerChoice() {
-    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+   return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 }
+
+function getWinner() {
+   if (playerScore < computerScore) {
+     alert ("You lose!");
+     return "You lose!";
+   } else if (playerScore == computerScore) {
+     alert ("Draw!");
+     return "Draw!";
+   } else {
+     alert ("You win!");
+     return "You win!";
+   }
+}
+
 
 
 function playRound(playerSelection, computerSelection)
@@ -14,33 +28,36 @@ function playRound(playerSelection, computerSelection)
  playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
  computerSelection = getComputerChoice();
  if (playerSelection === computerSelection) {
-    alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    computerScore++;
-    playerScore++;
-    return "Draw! You both selected " + playerSelection; 
+   alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
+     computerScore++;
+     playerScore++;
+     return "Draw! You both selected " + playerSelection; 
  } else if (playerSelection === "rock" && computerSelection === "paper") {
-    computerScore++;
-    alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Paper beat rock!";
+     computerScore++;
+     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
+     return "You lose! Paper beat rock!";
  } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    computerScore++;
-    alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Scissors beat rock!";
+     computerScore++;
+     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
+     return "You lose! Scissors beat rock!";
  } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    computerScore++;
-    alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You lose! Scissors beat paper!";
+     computerScore++;
+     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
+     return "You lose! Scissors beat paper!";
  } else {
-    playerScore++;
-    alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
-    return "You win! " + playerSelection + " beats " + computerSelection + "!";
-} 
+     playerScore++;
+     alert("The current score is: Player: " + playerScore + " vs Computer: " + computerScore);
+     return "You win! " + playerSelection + " beats " + computerSelection + "!";
+  } 
 }
 
 function game() {
    for (let i = 0; i < 5; i++) {
-      console.log(playRound());
+        console.log(playRound());     
+   }
 }
-} 
+
+
 
 game();
+getWinner();
