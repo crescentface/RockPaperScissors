@@ -67,3 +67,14 @@ function game() {
 //described in game().
 game();
 console.log(getWinner());
+
+//Why doesn't this work?
+//function game() {
+//   for (let i = 0; i < 5; i++) {
+//      if (i < 5 ) {
+//        console.log(playRound());
+//      } else {
+//        console.log(getWinner());
+//      }
+//   }
+//}
