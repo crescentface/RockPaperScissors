@@ -66,4 +66,4 @@ function game() {
 //Having to call game then getWinner due to not being able to integrate
 //described in game().
 game();
-getWinner();
+console.log(getWinner());
